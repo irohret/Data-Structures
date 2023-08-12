@@ -2,9 +2,11 @@
 
 typedef struct Node Node;
 
+// implementation of a singly linked list
+
 struct Node{
-    int data;
-    Node *next;
+    int data;       // value of in the node
+    Node *next;     // pointer to the next node
 };
 
 Node *ll_create(int data);

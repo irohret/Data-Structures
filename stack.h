@@ -3,6 +3,8 @@
 
 typedef struct Stack Stack;
 
+// implementation of a stack ADT
+
 struct Stack{
     int *arr;       // number of elements in the stack (array)
     int capacity;   // maximum number of elements the stack can hold

@@ -2,6 +2,8 @@
 
 typedef struct Queue Queue;
 
+// implementation of a queue ADT
+
 struct Queue{
     int *arr;         // number of elements in the queue (array)
     int front;        // keep track of the front of the queue

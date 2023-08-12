@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 #include <stdbool.h>
 #include <inttypes.h>
 
@@ -7,6 +8,7 @@
 
 Node *ll_create(int data){
     Node *n = (Node *)malloc(sizeof(Node));
+    assert(n);
     n->data = data;
     n->next = NULL;
     return n;
