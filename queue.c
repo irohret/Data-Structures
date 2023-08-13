@@ -42,7 +42,7 @@ Queue *queue_enqueue(Queue *q, int data){
     return q;
 }
 
-// this miethod is time efficent but not space efficent
+// this method is time efficient but not space efficient
 Queue *queue_dequeue(Queue *q){
     if(queue_isEmpty(q)){
         fprintf(stderr, 
@@ -115,7 +115,7 @@ int main(int argc, char **argv){
     queue_dequeue(queue);
     queue_dequeue(queue);
 
-   printf("size of the queue: %lu\n", queue_size(queue));
+    printf("size of the queue: %lu\n", queue_size(queue));
     queue_print(queue);
 
     queue_free(&queue);
