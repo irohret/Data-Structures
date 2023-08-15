@@ -1,6 +1,6 @@
 #pragma once
 
-// implementaion of a double linked list
+// implementation of a double linked list
 
 typedef struct Node Node;
 
@@ -14,7 +14,7 @@ Node *ll_create(int data);
 
 Node *ll_insert_front(Node *n, int data);
 
-Node *ll_insert_middle(Node *n, int data);
+Node *ll_insert_middle(Node *n, int data, int index);
 
 Node *ll_insert_rear(Node *n, int data);
 
