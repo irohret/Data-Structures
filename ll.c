@@ -31,8 +31,6 @@ Node *ll_insert(Node *n, int data){
 // TODO: find a way to remove the first node from the list
 // without segfault or freeing more than what is allocated
 
-
-/*
 Node *ll_remove(Node *n, int target){
     Node *current = n;
     Node *prev = NULL;
@@ -43,7 +41,7 @@ Node *ll_remove(Node *n, int target){
         n = n->next;
         printf("next node in the list: %d\n", n->data);
         //free(temp);
-        return temp;
+        return n;
     }
     
     while(current != NULL){
@@ -59,8 +57,9 @@ Node *ll_remove(Node *n, int target){
    }
    
    return n = prev;
-}*/
+}
 
+/*
 Node *ll_remove(Node *n, int target){
     Node *current = n;
     Node *prev = NULL;
@@ -84,7 +83,7 @@ Node *ll_remove(Node *n, int target){
     }
 
     return n;
-}
+}*/
 
 bool ll_search(Node *n, int target){
     Node *current = n;
