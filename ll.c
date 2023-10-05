@@ -31,59 +31,39 @@ Node *ll_insert(Node *n, int data){
 // TODO: find a way to remove the first node from the list
 // without segfault or freeing more than what is allocated
 
-Node *ll_remove(Node *n, int target){
-    Node *current = n;
-    Node *prev = NULL;
+void ll_firstNode(Node *n){
+    Node *temp = n;
+    n = n->next;
+    free(temp);
+    return;
+}
 
-    if (n->data == target) {
-
-        Node *temp = n;
-        n = n->next;
-        printf("next node in the list: %d\n", n->data);
-        //free(temp);
-        return n;
+Node *ll_remove(Node **n, int target){
+    Node *temp = NULL;
+    
+    // remove the head node
+    if((*n)->data == target){
+        temp = (*n);
+        (*n) = (*n)->next;
+        free(temp);  
     }
+    
+    Node *current = *n;
+    Node *prev = NULL;
     
     while(current != NULL){
         if(current->data == target){
             prev->next = current->next;
             
-            Node *temp = current;
+            temp = current;
             current = current->next;
-            free(temp);
+            free(current);
         }
         prev = current;
         current = current->next;
-   }
-   
-   return n = prev;
-}
-
-/*
-Node *ll_remove(Node *n, int target){
-    Node *current = n;
-    Node *prev = NULL;
-    
-    while(current != NULL){
-        if(current->data == target){
-            if(prev == NULL){
-                n = current->next;
-            } else {
-                prev->next = current->next;
-            } 
-            
-            Node *temp = current;
-            current = current->next;
-            free(temp);
-
-           } else{
-                prev = current;
-                current = current->next;
-           }
     }
-
-    return n;
-}*/
+    return *n;
+}
 
 bool ll_search(Node *n, int target){
     Node *current = n;
@@ -146,7 +126,7 @@ void ll_free(Node **n){
 
 void ll_print(Node *n){
     Node *current = n;
-    while(current != NULL){
+    while(current->next != NULL){
         printf("%d -> ", current->data);
         current = current->next;
     }
@@ -175,11 +155,11 @@ int main(int argc, char **argv){
     
     // head = ll_reverse(head);
 
-    ll_remove(head, 2);
+    ll_remove(&head, 2);
 
     // printf("length: %lu\n", ll_length(head));
 
-    printf("search: %d\n", ll_search(head, 6));
+    //printf("search: %d\n", ll_search(head, 3));
     
     ll_print(head);
 

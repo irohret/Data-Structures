@@ -13,7 +13,7 @@ Node *ll_create(int data);
 
 Node *ll_insert(Node *n, int data);
 
-Node *ll_remove(Node *n, int target);
+Node *ll_remove(Node **n, int target);
 
 bool ll_search(Node *n, int target);
 
